@@ -10,6 +10,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	transition-timing-function: ease;
 }
 
 body {
@@ -21,23 +22,43 @@ body {
 	text-transform: uppercase;
 	-webkit-font-smoothing: antialiased;
 }
+
+a {
+	text-decoration: none;
+	color:var(--light-color)
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.container {
+	margin-bottom: 7rem;
+}
 .wrapper {
 	background-image: url(images/black-paper-texture.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100%;
+	padding:0 2rem 0 2rem;
 	display: grid;
 	justify-content: center;
 	align-items: center;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: auto 100vh auto 10rem;
+	grid-template-rows: auto 100vh auto auto auto 10rem;
 	grid-template-areas: 
 	"nav nav"
 	"header header"
-	"main main"
+	"about about"
+	"work work"
+	"contact contact"
 	"footer footer"
 	;
 }
-/* NAVIGATION TEST */
+
+
+/* NAVIGATION */
 ul {
 	list-style-type: none;
 	padding: 0;
@@ -188,10 +209,198 @@ header i {
 }
 
 
-main {
-	grid-area: main;
-	grid-template-columns: ;
+#about {
+	grid-area: about;
 }
+
+#about img{
+	width: 27rem;
+	height:100%;
+	border-radius: 999rem;
+	align-self: center;
+}
+
+#about p {
+	font-size: 3.8rem;
+	line-height: 3.3rem;
+	margin: 0 0 3.5rem 2rem;
+}
+
+#work {
+	grid-area: work;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 6rem;
+}
+
+.work-item {
+	position: relative;
+	width: 30rem;
+	height: 30rem;
+}
+
+.work-item img{
+	width: 30rem;
+}
+
+/*  OVERLAY + TEXT  */
+
+.work-item .overlay{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display:grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: minmax(auto, 3fr) auto auto 1fr;
+	gap: 2.5rem;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(3px);
+	color:var(--light-color);
+	opacity: 0;
+	transition: 0.2s;
+	font-size: 2.5rem;
+	padding: 20px 30px;
+}
+
+.work-item .overlay .head {
+	transform: translateY(40px);
+	transition: 0.2s;
+}
+
+.work-item .overlay .head hr {
+	display: block;
+	width: 0;
+	border: none;
+	border-bottom: solid 4px var(--light-color);
+	position: relative;
+	top: 2rem;
+	transition: all 0.5s ease 0.1s;
+}
+
+.work-item .overlay .languages {
+	transform: translateY(40px);
+	transition: 0.3s;
+}
+
+.work-item .overlay .details {
+	transform: translateY(40px);
+	transition: 0.5s;
+}
+
+.work-item .overlay .github-link i{
+	position: absolute;
+	transform: translateY(40px);
+	transition: 0.5s;
+	color: var(--light-color);
+	top: 12rem;
+	right: 2rem;
+	font-size: 6rem;
+}
+
+.work-item .overlay .github-link i:hover{
+	color:var(--yellow-color);
+}
+
+/*   OVERLAY HOVER EFFECT   */ 
+
+.work-item:hover .overlay{
+	opacity: 1;
+}
+
+.work-item:hover .overlay hr {
+    width: 150px;
+}
+
+.work-item:hover .overlay .head{
+	transform: translateY(0px);
+}
+
+.work-item:hover .overlay .languages{
+	transform: translateY(0px);
+}
+
+.work-item:hover .overlay .details{
+	transform: translateY(0px);
+}
+
+.work-item:hover .overlay .github-link i {
+	transform: translateY(0px);
+}
+
+#contact {
+	grid-area: contact;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto;
+}
+
+#contact a:first-child {
+	color: var(--yellow-color);
+}
+
+#contact p, a {
+	font-size: 3.8rem;
+	line-height: 3.3rem;
+}
+
+.toggle-content {
+	display: none;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
+}
+
+.toggle-content.is-visible {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	opacity: 1;
+}
+
+/* CONTACT FORM STYLING*/
+
+
+.col {
+	flex-direction: column;
+}
+
+.col-50 {
+	width: 50%;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.form-control {
+	max-width: 30rem;
+	margin: 0.4rem 0;
+	width: 100%;
+}
+
+label{
+	display: block; 
+	font-size: 1rem;
+	margin-bottom: 0.2rem;
+}
+
+.fas {
+	margin-right:0.5rem;
+}
+
+form .form-control label.inline {
+	display: inline;
+}
+
+input[type=text], textarea{
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-sizing: border-box;
+  }
 
 footer {
 	grid-area: footer;

@@ -32,14 +32,132 @@
 				</li>
 			</ul>
 		</nav>
-		<header id="header">
+		<header id="header container">
 			<a class="header-logo"><h1>J</h1><i class="fas fa-circle"></i></a><h1 class="subheader">oel</h1>
 			<h1 class="subheader">Webdev</h1>
 			<h1 class="subheader">eloper &</h1>
 			<h1 class="subheader">Designer</h1>
 		</header>
-		<main class="container">
-		</main>
+		<div id="about" class="flex container">
+			<div class="about-text">
+			<p>My name is Joel consectetur adipiscing elit. Donec sit amet diam tincidunt, molestie purus sed, placerat eros. Donec a felis ut lacus tincidunt</p>
+			<p>hendrerit fringilla sed ac mi. Pellentesque non pulvinar turpis. Pellentesque in faucibus massa, eu pellentesque felis.</p>
+			</div>
+			<img src="images/profile-pic.jpg" alt="Picture of me">
+		</div>
+		<div id="work" class="flex container">
+				<!-- START WORK ITEM 1-->
+				<article class="work-item">
+					<div class="overlay">
+						<div class="item head">
+							<p>Responsive Page</p>
+							<hr>
+						</div>
+						<div class="item languages">
+							<p>HTML</p>
+							<p>CSS</p>
+						</div>
+						<div class="item details">
+							<p>Grid</p>
+							<p>Flexbox</p>
+							<p>Media Queries</p>
+						</div>
+						<a href="#" class="github-link"><i class="fab fa-github"></i></a>
+					</div>
+					<img src="images/grid+flexbox-page.jpg" alt="Responsive Webpage">
+				</article>
+				<!-- END WORK ITEM 1-->
+				<!-- START WORK ITEM 2-->
+				<article class="work-item">
+					<div class="overlay">
+						<div class="item head">
+							<p>Responsive Page</p>
+							<hr>
+						</div>
+						<div class="item languages">
+							<p>HTML</p>
+							<p>CSS</p>
+						</div>
+						<div class="item details">
+							<p>Grid</p>
+							<p>Flexbox</p>
+							<p>Media Queries</p>
+						</div>
+						<a href="#" class="github-link"><i class="fab fa-github"></i></a>
+					</div>
+					<img src="images/mockup-test.png" alt="Responsive Page">
+					
+				</article>
+				<!-- END WORK ITEM 2-->
+				<!-- START WORK ITEM 3-->
+				<article class="work-item">
+					<div class="overlay">
+						<div class="item head">
+							<p>WP Page for Volantic</p>
+							<hr>
+						</div>
+						<div class="item languages">
+							<p>HTML</p>
+							<p>CSS</p>
+							<p>JQuery</p>
+							<p>PHP</p>
+						</div>
+						<div class="item details">
+							<p>Media player</p>
+						</div>
+						<a href="#" class="github-link"><i class="fab fa-github"></i></a>
+					</div>
+					<img src="images/volantic-page.jpg" alt="Volantic Page">
+				</article>
+				<!-- END WORK ITEM 3-->
+				<!-- START WORK ITEM 4-->
+				<article class="work-item">
+					<div class="overlay">
+						<div class="item head">
+							<p>Practicing webforms</p>
+							<hr>
+						</div>
+						<div class="item languages">
+							<p>HTML</p>
+							<p>CSS</p>
+						</div>
+						<div class="item details">
+							<p>Webforms</p>
+						</div>
+						<a href="#" class="github-link"><i class="fab fa-github"></i></a>
+					</div>
+					<img src="images/webforms-page.jpg" alt="Webforms Page">
+				</article>
+		</div>
+		<div id="contact" class="container">
+			<div class="contact-text">
+				<a href="#contact-form" class="toggle">Drop me a line,</a>
+				<form id="contact-form" class="toggle-content">
+					<article class="form-control row">
+						<div class="col-50">
+							<label for="name"><i class="fas fa-user"></i>Name</label>
+							<input type="text" name="name" id="name" placeholder="Steve">
+						</div>
+						<div class="col-50">
+							<label for="email"><i class="fas fa-envelope"></i>Email</label>
+							<input type="text" placeholder="steve@stevensmail.com" name="email" required>
+						</div>
+					</article>
+					<article class="form-control col">
+						<div class="col">
+							<label for="subject">Subject</label>
+							<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+						</div>
+					</article>
+					<input type="submit" value="Submit">
+				</form>
+				<p>&nbsp;I'd like to hear from you</p>
+			</div>
+			<div class="contact-links">
+				<i class="fab fa-github"></i>
+				<i class="fab fa-linkedin"></i>
+			</div>
+		</div>
 		<footer>
 		</footer>
 </div>
