@@ -37,6 +37,20 @@ a {
 .container {
 	margin-bottom: 7rem;
 }
+
+.btn {
+	background: var(--yellow-color);
+	border-style: none;
+	border: none;
+	border-radius: 2px;
+	padding: 10px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	width: 10rem;
+	cursor: pointer;
+}
+
 .wrapper {
 	background-image: url(images/black-paper-texture.jpg);
 	background-repeat: no-repeat;
@@ -174,7 +188,7 @@ ul {
 	transform: rotate(-315deg);
 }
 
-header {
+#header {
 	grid-area: header;
 	display: flex;
 	flex-direction: column;
@@ -208,6 +222,21 @@ header i {
 	top:6.9rem;
 }
 
+/* Shrunken Header and dot Styling */
+.small-header {
+
+}
+.small-dot{
+
+}
+
+.subheader {
+	opacity: 1;
+	transition: 1s;
+}
+.invisible {
+	opacity: 0;
+}
 
 #about {
 	grid-area: about;
@@ -330,7 +359,7 @@ header i {
 #contact {
 	grid-area: contact;
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
 	grid-template-rows: auto;
 }
 
@@ -338,7 +367,11 @@ header i {
 	color: var(--yellow-color);
 }
 
-#contact p, a {
+#contact p {
+	font-size: 3.8rem;
+	line-height: 3.3rem;
+}
+#contact a {
 	font-size: 3.8rem;
 	line-height: 3.3rem;
 }
@@ -358,8 +391,37 @@ header i {
 	opacity: 1;
 }
 
+
+#contact .contact-links {
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+#contact .contact-links i {
+	font-size: 10rem;
+	color: var(--yellow-color);
+	margin: 0 0 20px 0;
+	width: fit-content;
+}
+
+#contact .contact-links i:hover{
+	color: #b18142;
+	transition: 0.2s;
+}
+
+
 /* CONTACT FORM STYLING*/
 
+
+#contact-form {
+	width: 75%;
+}
+
+.form-control {
+	margin: 0.4rem 0;
+	width: 100%;
+	display: flex;
+}
 
 .col {
 	flex-direction: column;
@@ -368,16 +430,15 @@ header i {
 .col-50 {
 	width: 50%;
 }
+.col-50:nth-child(even) {
+	margin-left: 20px;
+}
 
 .row {
 	flex-direction: row;
 }
 
-.form-control {
-	max-width: 30rem;
-	margin: 0.4rem 0;
-	width: 100%;
-}
+
 
 label{
 	display: block; 
@@ -395,12 +456,31 @@ form .form-control label.inline {
 
 input[type=text], textarea{
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	padding: 12px;
-	border: 1px solid #ccc;
+	border-style: none;
 	border-radius: 3px;
 	box-sizing: border-box;
+	background: #343538;
+	color:var(--light-color);
   }
+
+textarea {
+	font: 400 13.3333px Arial;
+}
+
+
+.btn:active {
+	background: #b18142;
+	border-style: none;
+	border: none;
+	outline:none;
+}
+
+#contact-form .btn{
+	align-self: center;
+	margin-bottom: 20px;
+}
 
 footer {
 	grid-area: footer;

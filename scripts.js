@@ -93,3 +93,17 @@ document.addEventListener('click', function (event) {
 	toggle(content);
 
 }, false);
+
+
+// Shrinking Header on scroll function
+$(window).scroll(function(){
+    if($(document).scrollTop() > 10) {
+        $('#header').addClass('small-header');
+		$('#yellowdot').addClass('small-yellowdot');
+		$('.subheader').addClass('invisible');
+    } else {
+        $('#header').removeClass('small-header');
+		$('#yellowdot').removeClass('small-yellowdot');
+		$('.subheader').removeClass('invisible');
+    }
+});
