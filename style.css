@@ -61,6 +61,7 @@ a {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: 100vw;
+	max-width: 1680px;
 	padding:0 2rem 0 2rem;
 	display: grid;
 	justify-content: center;
