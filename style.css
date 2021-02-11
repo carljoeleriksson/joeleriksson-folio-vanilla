@@ -299,7 +299,7 @@ header #yellowdot {
 
 #about img{
 	width: 6em;
-	height:100%;
+	height:auto;
 	border-radius: 999rem;
 	align-self: center;
 	justify-self: center;
