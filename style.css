@@ -95,7 +95,8 @@ ul {
 	top: 0;
 	right: 0;
 	width: 25%;
-	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
 	transition: 0.5s;
 }
 
@@ -342,7 +343,8 @@ header #yellowdot {
 	grid-template-rows: auto auto auto 1fr;
 	gap: 2.5rem;
 	background: rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	        backdrop-filter: blur(3px);
 	color:var(--light-color);
 	opacity: 0;
 	transition: 0.2s;
@@ -479,6 +481,8 @@ header #yellowdot {
 	font-size: 3em;
 	color: var(--yellow-color);
 	margin: 0 0 20px 0;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 }
 
