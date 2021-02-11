@@ -275,6 +275,27 @@ header #yellowdot {
 .about-image{grid-area: about-image;}
 .about-text{grid-area: about-text;}
 
+.about-text span {
+	color: var(--yellow-color);
+}
+
+.about-text a:hover{
+	color: var(--yellow-color);
+}
+.about-text .toggle-content {
+	display: none;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: height 100ms ease-in-out, opacity 350ms ease-in-out;
+}
+
+.about-text .toggle-content.is-visible {
+	display: inline;
+	height: 1.5em;
+	opacity: 1;
+}
+
 #about img{
 	width: 6em;
 	height:100%;
@@ -285,7 +306,7 @@ header #yellowdot {
 }
 
 #about p {
-	line-height: 0.9em;
+	line-height: 0.95em;
 	margin: 0 0 3.5rem 2rem;
 }
 
@@ -429,11 +450,11 @@ header #yellowdot {
 }
 
 #contact a:first-child:hover hr{
-	width: 8.8em;
+	width: 90%;
 }
 
 
-.toggle-content {
+.contact-text .toggle-content {
 	display: none;
 	height: 0;
 	opacity: 0;
@@ -441,7 +462,7 @@ header #yellowdot {
 	transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
 }
 
-.toggle-content.is-visible {
+.contact-text .toggle-content.is-visible {
 	display: flex;
 	flex-direction: column;
 	height: auto;
@@ -563,6 +584,14 @@ footer .fas{
 		font-size: 4.5rem;
 		letter-spacing: -0.2rem;
 	}
+	.work-item {
+		width: 25rem;
+	}
+	.work-item .overlay{
+		font-size: 2rem;
+		gap:0.5rem;
+		padding: 0.5rem;
+	}
 }
 
 @media screen and (max-width:1050px) {
@@ -576,6 +605,11 @@ footer .fas{
 	}
 	.work-item {
 		width: 20rem;
+	}
+	.work-item .overlay{
+		font-size: 1.5rem;
+		gap:0.5rem;
+		padding: 0.5rem;
 	}
 	#about {
 		font-size: 2.8rem;

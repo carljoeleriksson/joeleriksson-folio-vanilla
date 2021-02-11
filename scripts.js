@@ -106,9 +106,6 @@ var onScroll = function(e) {
 }
 
 
-
-
-
 var init = function() {
 	nav = document.querySelector('.nav');
 	menu = document.querySelector('.nav__list');
