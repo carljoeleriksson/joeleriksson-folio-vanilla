@@ -280,7 +280,7 @@ header #yellowdot {
 	color: var(--yellow-color);
 }
 
-.about-text a:hover{
+.about-text a{
 	color: var(--yellow-color);
 }
 .about-text .toggle-content {
