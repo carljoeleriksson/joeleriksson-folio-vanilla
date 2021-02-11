@@ -1,4 +1,8 @@
 var menu,arrow;
+var percent;
+var totalHeight;
+var lastScrollTop;
+
 
 var openMenu = function() {
   arrow.classList.toggle('arrow--active');
@@ -8,8 +12,10 @@ var openMenu = function() {
 var init = function() {
 	menu = document.querySelector('.nav__list');
 	arrow = document.querySelector('.arrow');
-	console.log(arrow);
-  arrow.addEventListener('click', openMenu, false);
+	percent=1;
+	totalHeight=$('#header').height();
+	lastScrollTop = 0;
+  	arrow.addEventListener('click', openMenu, false);
 };
 
 $(document).ready(init);
@@ -97,13 +103,39 @@ document.addEventListener('click', function (event) {
 
 // Shrinking Header on scroll function
 $(window).scroll(function(){
-    if($(document).scrollTop() > 10) {
-        $('#header').addClass('small-header');
-		$('#yellowdot').addClass('small-yellowdot');
-		$('.subheader').addClass('invisible');
-    } else {
-        $('#header').removeClass('small-header');
-		$('#yellowdot').removeClass('small-yellowdot');
-		$('.subheader').removeClass('invisible');
-    }
+	var st = $(this).scrollTop();
+	let k=$('#header').height();
+   if (st > lastScrollTop){
+       // downscroll code
+       var down= (st-lastScrollTop)/totalHeight;
+	   k=percent-2*down;
+       percent-=down;
+   } else {
+      // upscroll code
+      var up= (lastScrollTop-st)/totalHeight;
+	  k=percent+2*up;
+      percent+=up;
+   }
+   		//$('.header-logo').css("position", fixed);
+        $('.subheader').css("opacity",percent);
+    	//$('#header').height(totalHeight*percent);
+		console.log(k);
+		console.log(percent);
+        lastScrollTop = st;
+
+    // if($(document).scrollTop() > 0) {
+    //     $('#header').css('height', '13vh');
+	// 	$('.header-logo').addClass('small-header-logo');
+	// 	$('#yellowdot').addClass('small-yellowdot');
+	// 	$('.subheader').addClass('invisible');
+    // } else {
+	// 	//$('#header').css('height', '100vh');
+    //     $('#header').removeClass('small-header');
+	// 	$('.header-logo').removeClass('small-header-logo');
+	// 	$('#yellowdot').removeClass('small-yellowdot');
+	// 	$('.subheader').removeClass('invisible');
+    // }
 });
+
+// Flip content test
+
