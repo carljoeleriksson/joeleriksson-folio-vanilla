@@ -81,6 +81,16 @@ document.addEventListener('click', function (event) {
 
 }, false);
 
+
+// TICKING CLOCK FUNCTION
+
+$(document).ready(function() {
+    var interval = setInterval(function() {
+        var momentNow = moment();
+        $('#time-part').html(momentNow.format('hh:mm:ss'));
+    }, 100);
+});
+
 // Shrinking Header on scroll function
 var changeOpacity = function(){
 	var st = $(this).scrollTop();

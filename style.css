@@ -274,7 +274,7 @@ header #yellowdot {
 }
 
 .about-image{grid-area: about-image;}
-.about-text{grid-area: about-text;}
+.about-text{grid-area: about-text; overflow: hidden;}
 
 .about-text span {
 	color: var(--yellow-color);
@@ -282,7 +282,70 @@ header #yellowdot {
 
 .about-text a{
 	color: var(--yellow-color);
+	text-transform: color 0.3s;
+	position:relative;
+	overflow: hidden;
 }
+
+.about-text a:hover {
+	color: #E6A756;
+}
+
+/*
+.about-text a::before, .about-text a::after {
+	content: '';
+    position: absolute;
+    width: 30%;
+    height: 0.07em;
+    background: #E6A756;
+    bottom: 0.08em;
+    left: 35%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.about-text a::after{
+	background: #E6A756;
+    -webkit-transform: translate3d(-300%,0,0) scale3d(0,1,1);
+    transform: translate3d(-300%,0,0) scale3d(0,1,1);
+}
+
+.about-text a:hover::before {
+	-webkit-transform: translate3d(200%,0,0) scale3d(0,1,1);
+	transform: translate3d(200%,0,0) scale3d(0,1,1);
+}
+
+.about-text a:hover::after {
+	-webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+	transform: translate3d(0,0,0) scale3d(1,1,1);
+}
+
+*/
+
+.about-text a span {
+	color: #E6A756;
+    display: inline-block;
+    position: relative;
+    -webkit-transform: perspective(1000px) rotate3d(0,1,0,
+0deg
+);
+    transform: perspective(1000px) rotate3d(0,1,0,
+0deg
+);
+    -webkit-transition: -webkit-transform 0.5s, color 0.5s;
+    transition: transform 0.5s, color 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.about-text a:hover span {
+	color: #E5E5E5;
+	-webkit-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+	transform: perspective(1000px) rotate3d(0,1,0,180deg);
+}
+
 .about-text .toggle-content {
 	display: none;
 	height: 0;
@@ -295,6 +358,10 @@ header #yellowdot {
 	display: inline;
 	height: 1.5em;
 	opacity: 1;
+}
+
+#time-part {
+	font-size: 0.7em;
 }
 
 #about img{
@@ -679,6 +746,10 @@ footer .fas{
 	}
 	.about-text{
 		font-size: 2rem;
+	}
+
+	#about p{
+		margin: 0 0 3.5rem 0.1rem;
 	}
 
 	.work-item .overlay{
