@@ -82,8 +82,7 @@ document.addEventListener('click', function (event) {
 }, false);
 
 
-// TICKING CLOCK FUNCTION
-
+// TICKING CLOCK FUNCTION (depending on moment.js)
 $(document).ready(function() {
     var interval = setInterval(function() {
         var momentNow = moment();
